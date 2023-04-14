@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+grpc:
+  client:
+    GLOBAL:
+      negotiation-type: plaintext
+
+    hello-service:
+      address: discovery:///grpc-server
