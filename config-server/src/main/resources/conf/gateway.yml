@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: hello-service
+          uri: lb://grpc-client
+          predicates:
+            - Path=/v1/grpc-client/**
+      discovery:
+        locator:
+          enabled: true
+    consul:
+      discovery:
+        register: false
+      host: localhost
+      port: 8500
+
+server:
+  port: 8080
